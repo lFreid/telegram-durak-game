@@ -1,0 +1,13 @@
+[Unit]
+Description=Durak Card Game Backend (FastAPI + WebSocket)
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/durak
+ExecStart=/opt/durak-venv/bin/uvicorn server:app --host 127.0.0.1 --port 8765
+Restart=always
+RestartSec=5
+User=www-data
+
+[Install]
+WantedBy=multi-user.target
